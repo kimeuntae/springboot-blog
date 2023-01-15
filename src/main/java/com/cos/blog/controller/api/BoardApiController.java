@@ -11,7 +11,7 @@ import com.cos.blog.config.auth.PrincipalDetail;
 import com.cos.blog.dto.ResponseDto;
 import com.cos.blog.model.Board;
 import com.cos.blog.service.BoardService;
-
+ 
 @RestController
 public class BoardApiController {
 
