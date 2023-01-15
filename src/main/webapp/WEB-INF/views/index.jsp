@@ -1,36 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Bootstrap Example</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 </head>
 <body>
 	<%@ include file="layout/header.jsp" %>
 	<br>
 	<div class="container">
+	<c:forEach var="boards" items="${boards}">
 		<div class="card m-2">
 			<div class="card-body">
-				<h4 class="card-title">제목 적는부분</h4>
+				<h4 class="card-title">${boards.title}</h4>
 				<a href="#" class="btn btn-primary">상세보기</a>
 			</div>
 		</div>
+	</c:forEach>
 		
-		<div class="card m-2">
-			<div class="card-body">
-				<h4 class="card-title">제목 적는부분</h4>
-				<a href="#" class="btn btn-primary">상세보기</a>
-			</div>
-		</div>
-		
-		<div class="card m-2">
-			<div class="card-body">
-				<h4 class="card-title">제목 적는부분</h4>
-				<a href="#" class="btn btn-primary">상세보기</a>
-			</div>
-		</div>				
 	</div>
 	<%@ include file="layout/footer.jsp" %>
 </body>

@@ -20,7 +20,8 @@ import com.cos.blog.model.RoleType;
 import com.cos.blog.model.User;
 import com.cos.blog.repository.UserRepository;
 
-import jakarta.transaction.Transactional;
+import javax.transaction.*;
+//import jakarta.transaction.Transactional;
 
 // dadta를 리턴해주는 
 @RestController
