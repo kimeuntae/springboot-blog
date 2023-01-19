@@ -3,6 +3,8 @@ package com.cos.blog.controller.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,9 +20,17 @@ public class BoardApiController {
 	@Autowired
 	private BoardService boardService;
 	
+	/* 글 저장 */
 	@PostMapping("/api/board")
 	public ResponseDto<Integer> save(@RequestBody Board board,@AuthenticationPrincipal PrincipalDetail principal) {
 		boardService.boardSave(board,principal.getUser());
+		return new ResponseDto<Integer>(HttpStatus.OK,1); //자바오브젝트를 JSON으로 변황하는데
+	}
+	
+	/* 글 삭제 */
+	@DeleteMapping("/api/board/{id}")
+	public ResponseDto<Integer> save(@PathVariable int id) {
+		boardService.boardDelete(id);
 		return new ResponseDto<Integer>(HttpStatus.OK,1); //자바오브젝트를 JSON으로 변황하는데
 	}
 	
