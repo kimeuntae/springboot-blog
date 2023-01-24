@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.cos.blog.dto.ReplySaveRequestDto;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -39,5 +41,6 @@ public class Reply {
 	private User user; // 아이디	 
 	
 	@CreationTimestamp //시간이 자동 입력
-	private Timestamp createData;
+	private Timestamp createDate;
+	
 }

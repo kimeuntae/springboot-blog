@@ -42,5 +42,12 @@ public class BoardController {
 	@GetMapping("/board/saveForm")
 	public String joinForm() {
 		return "board/saveForm";
+	}
+	
+	/* 글 수정 */
+	@GetMapping("/board/{id}/updateForm")
+	public String updateForm(Model model, @PathVariable int id) {
+		model.addAttribute("board",boardService.boardDetail(id));
+		return "board/updateForm";
 	}	
 }

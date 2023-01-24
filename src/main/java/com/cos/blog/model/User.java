@@ -32,7 +32,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY) //프로젝트에서 연결된 DB의 넘버링 전략을 따라간다.
 	private int id; // 시퀀스 , 자동순번생성
 	
-	@Column(nullable = false,length = 30)
+	@Column(nullable = false,length = 100,unique = true)
 	private String username; // 아이디
 	
 	@Column(nullable = false,length = 100) //123456=>해쉬 비번 암호화
@@ -45,7 +45,11 @@ public class User {
 	@Enumerated(EnumType.STRING)
 	private RoleType role; // Enum을 쓰는게 좋음//
 	
+	@Column(nullable = true,length = 30)
+	private String oauth;
+	
 	@CreationTimestamp //시간이 자동 입력
-	private Timestamp createData;
+	private Timestamp createDate;
+	
 	
 }
